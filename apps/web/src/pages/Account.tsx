@@ -3,7 +3,7 @@ import { Bell, ChevronRight, FileText, Heart, LifeBuoy, MapPin, MessagesSquare, 
 import { PageHeader } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
-import { env, isDemoMode } from "@/lib/env";
+import { isDemoMode } from "@/lib/env";
 import { useT } from "@/lib/i18n";
 import { usePrefs } from "@/stores/prefs";
 import { toast } from "@/stores/toast";
@@ -68,15 +68,9 @@ export default function Account() {
             </button>
           </li>
           <li>
-            {env.supportWhatsapp ? (
-              <a href={`https://wa.me/${env.supportWhatsapp}`} target="_blank" rel="noreferrer" className="flex h-15 items-center gap-3.5 px-5 hover:bg-sage/40">
-                <LifeBuoy className="size-5 text-forest" /> <span className="flex-1">{t("help")}</span> <ChevronRight className="size-4 text-muted" />
-              </a>
-            ) : (
-              <button onClick={soon} className="flex h-15 w-full items-center gap-3.5 px-5 text-left hover:bg-sage/40">
-                <LifeBuoy className="size-5 text-forest" /> <span className="flex-1">{t("help")}</span> <ChevronRight className="size-4 text-muted" />
-              </button>
-            )}
+            <Link to="/help/contact" className="flex h-15 items-center gap-3.5 px-5 hover:bg-sage/40">
+              <LifeBuoy className="size-5 text-forest" /> <span className="flex-1">{t("help")}</span> <ChevronRight className="size-4 text-muted" />
+            </Link>
           </li>
         </ul>
 
