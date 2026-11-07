@@ -27,6 +27,7 @@ if (Capacitor.isNativePlatform()) {
   void import("@capacitor/status-bar").then(({ StatusBar, Style }) => StatusBar.setStyle({ style: Style.Light }).catch(() => undefined));
   void import("@capacitor/splash-screen").then(({ SplashScreen }) => SplashScreen.hide().catch(() => undefined));
 } else if (import.meta.env.PROD) {
+  void import("virtual:pwa-register").then(({ registerSW }) => registerSW({ immediate: true }));
 }
 
 createRoot(document.getElementById("root")!).render(
