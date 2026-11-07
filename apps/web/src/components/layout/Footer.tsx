@@ -288,3 +288,8 @@ function useCoverAlign(outer: RefObject<HTMLElement | null>, inner: RefObject<HT
       const by = (fh - h) * posY;
       const or = o.getBoundingClientRect();
       const ir = i.getBoundingClientRect();
+      setAlign({ size: `${w}px ${h}px`, pos: `${bx - (ir.left - or.left)}px ${by - (ir.top - or.top)}px` });
+    };
+    const img = new Image();
+    img.onload = () => {
+      natural = { w: img.naturalWidth, h: img.naturalHeight };
