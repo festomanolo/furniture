@@ -20,7 +20,7 @@ export function ProductRail({ products, loading }: { products?: Product[]; loadi
               product={p}
               seller={sellers?.find((s) => s.id === p.sellerId)}
               sizes="(min-width:1024px) 22vw, 44vw"
-              className="w-[44vw] max-w-56 shrink-0 snap-start lg:w-auto lg:max-w-none"
+              className="w-[44%] max-w-56 shrink-0 snap-start lg:w-auto lg:max-w-none"
             />
           ))}
     </div>
