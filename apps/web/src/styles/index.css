@@ -79,6 +79,8 @@
   contain: paint;
   scrollbar-width: none;
   &::-webkit-scrollbar {
+    display: none;
+  }
 }
 @utility scrollbar-none {
   scrollbar-width: none;
