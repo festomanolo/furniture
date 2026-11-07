@@ -340,7 +340,7 @@ function Gallery({ p, onZoom }: { p: Product; onZoom: (i: number) => void }) {
 
   return (
     <div>
-      <div ref={track} className="scrollbar-none -mx-4 flex snap-x snap-mandatory overflow-x-auto sm:mx-0 sm:rounded-[1.75rem]">
+      <div ref={track} className="scrollbar-none -mx-4 flex snap-x snap-mandatory scroll-row sm:mx-0 sm:rounded-[1.75rem]">
         {p.images.map((im, i) => (
           <button key={im.id} data-i={i} onClick={() => onZoom(i)} className="relative w-full shrink-0 snap-center cursor-zoom-in" aria-label={`${im.alt}. Zoom`}>
             <Img base={im.src} alt={im.alt} priority={i === 0} sizes="(min-width:1024px) 55vw, 100vw" wrapperClassName="aspect-square sm:aspect-[4/3.4] lg:aspect-square" />
