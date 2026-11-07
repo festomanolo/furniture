@@ -69,6 +69,8 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 /*
+ * Horizontal scroll rows. contain: paint is required: without it Android WebView
+ * counts the row's scrolled-out content when sizing the layout viewport, widening
 }
 @utility scrollbar-none {
   scrollbar-width: none;
