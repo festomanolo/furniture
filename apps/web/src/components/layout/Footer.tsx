@@ -274,3 +274,8 @@ function useCoverAlign(outer: RefObject<HTMLElement | null>, inner: RefObject<HT
   const [align, setAlign] = useState({ size: "cover", pos: "center" });
   useLayoutEffect(() => {
     const o = outer.current;
+    const i = inner.current?.firstElementChild as HTMLElement | null;
+    if (!o || !i) return;
+    let natural: { w: number; h: number } | null = null;
+    const compute = () => {
+      if (!natural) return;
