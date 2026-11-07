@@ -27,20 +27,13 @@ export function TopBar() {
             <Link to="/" aria-label="SAMANI" className="shrink-0 rounded-full">
               <Logo />
             </Link>
-
-            <button
-              onClick={() => setLocOpen(true)}
-              className={cn(
-                "ml-1 hidden h-10 min-w-0 items-center gap-1.5 rounded-full px-3 text-left text-sm sm:flex",
-                onHero ? "hover:bg-white/10" : "hover:bg-sage/60",
-              )}
-            >
-              <MapPin className="size-4 shrink-0 opacity-80" />
+            <button onClick={() => setLocOpen(true)} className="ml-1 flex h-10 min-w-0 items-center gap-1.5 rounded-full px-2.5 text-left text-sm hover:bg-white/40">
+              <MapPin className="size-4 shrink-0 text-forest" />
               <span className="min-w-0 truncate">
-                <span className="opacity-70">{t("deliver_to")} </span>
+                <span className="hidden text-muted sm:inline">{t("deliver_to")} </span>
                 <span className="font-medium">{district}</span>
               </span>
-              <ChevronDown className="size-3.5 opacity-70" />
+              <ChevronDown className="size-3.5 shrink-0 text-muted" />
             </button>
 
             <nav className="ml-2 hidden items-center gap-1 lg:flex" aria-label="Primary">
