@@ -155,7 +155,6 @@ html.refract .liquid-lens {
   html.refract .liquid-lens {
     background: rgb(250 248 243 / 0.98);
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
 }
 
