@@ -21,6 +21,7 @@ const queryClient = new QueryClient({
 });
 
 document.documentElement.lang = usePrefs.getState().locale;
+enableRefraction();
 
 if (Capacitor.isNativePlatform()) {
   // A service worker inside the native shell would serve stale bundles after app updates.
