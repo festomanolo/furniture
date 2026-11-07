@@ -104,6 +104,25 @@ demo adapter, and a "Demo catalogue" notice shows on the Account page.
 - **Icons**: Lucide (as specified).
 - **Liquid glass** is a CSS approximation of Apple's native material, not an Apple web API.
 
+## Android debug build (verified on Galaxy S21, Android 15, WebView 156)
+
+```bash
+cd apps/web
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"   # Capacitor 8 needs JDK 21
+export ANDROID_HOME=$HOME/Library/Android/sdk
+npm run build && npx cap sync android
+cd android && ./gradlew assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+`android/local.properties` (sdk.dir) is machine-specific and git-ignored by the Android project.
+
+Lessons from the first device run:
+- Horizontal scroll rows must use the `scroll-row` utility (`contain: paint`). Without it Android
+  WebView sized the layout viewport to ~1720px and pushed the fixed header and tab bar off-screen.
+- The service worker is registered on the web only. Inside Capacitor it served stale bundles after
+  an update, so `main.tsx` unregisters any existing worker on native.
+
 ## Native builds (once API is live)
 
 ```bash
