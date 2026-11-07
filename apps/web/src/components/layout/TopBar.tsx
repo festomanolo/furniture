@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Bell, ChevronDown, Heart, MapPin, Search, ShoppingBag, User } from "lucide-react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router";
+import { Bell, ChevronDown, MapPin, User } from "lucide-react";
 import { IconButton } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { useT } from "@/lib/i18n";
-import { useCartCount } from "@/stores/cart";
 import { usePrefs } from "@/stores/prefs";
 import { LocationSheet } from "./LocationSheet";
 import { Logo } from "./Logo";
