@@ -11,6 +11,7 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       // Registered manually in main.tsx: web only. Native (Capacitor) ships assets in the APK/IPA.
+      injectRegister: null,
       includeAssets: ["favicon.svg"],
       manifest: {
         name: "SAMANI",
