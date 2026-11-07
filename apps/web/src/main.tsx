@@ -23,6 +23,7 @@ document.documentElement.lang = usePrefs.getState().locale;
 
 if (Capacitor.isNativePlatform()) {
   // A service worker inside the native shell would serve stale bundles after app updates.
+  void navigator.serviceWorker?.getRegistrations().then((rs) => rs.forEach((r) => r.unregister()));
   void import("@capacitor/status-bar").then(({ StatusBar, Style }) => StatusBar.setStyle({ style: Style.Light }).catch(() => undefined));
   void import("@capacitor/splash-screen").then(({ SplashScreen }) => SplashScreen.hide().catch(() => undefined));
 }
