@@ -15,6 +15,7 @@ const CustomStudio = lazy(() => import("@/pages/CustomStudio"));
 const Quotations = lazy(() => import("@/pages/Quotations"));
 const OrdersList = lazy(() => import("@/pages/Orders").then((m) => ({ default: m.OrdersList })));
 const OrderDetail = lazy(() => import("@/pages/Orders").then((m) => ({ default: m.OrderDetail })));
+const Help = lazy(() => import("@/pages/Help"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 export const router = createBrowserRouter([
