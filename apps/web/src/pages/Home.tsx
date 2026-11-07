@@ -103,7 +103,7 @@ function Categories() {
   const { data, isLoading } = useCategories();
   return (
     <Section title={t("shop_by_category")} href="/explore" className="pt-6">
-      <div className="scrollbar-none -mx-4 grid snap-x auto-cols-[5.5rem] grid-flow-col grid-rows-2 gap-x-3 gap-y-5 overflow-x-auto scroll-px-4 px-4 sm:-mx-6 sm:auto-cols-[6.5rem] sm:px-6 lg:mx-0 lg:grid-flow-row lg:grid-cols-9 lg:grid-rows-none lg:overflow-visible lg:px-0">
+      <div className="scrollbar-none -mx-4 grid snap-x auto-cols-[5.5rem] grid-flow-col grid-rows-2 gap-x-3 gap-y-5 scroll-row scroll-px-4 px-4 sm:-mx-6 sm:auto-cols-[6.5rem] sm:px-6 lg:mx-0 lg:grid-flow-row lg:grid-cols-9 lg:grid-rows-none lg:overflow-visible lg:[contain:none] lg:px-0">
         {isLoading
           ? Array.from({ length: 10 }, (_, i) => <Skeleton key={i} className="aspect-square w-full rounded-[1.4rem]" />)
           : data?.map((c) => (
