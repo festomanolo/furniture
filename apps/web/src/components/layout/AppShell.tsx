@@ -22,6 +22,7 @@ export function AppShell() {
       <a href="#main" className="sr-only z-[90] rounded-full bg-forest px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3">
         Skip to content
       </a>
+      <LiquidFilters />
       <TopBar />
       <main id="main" className={immersive ? "" : "pt-[calc(env(safe-area-inset-top)+5.5rem)] lg:pt-[calc(env(safe-area-inset-top)+6.5rem)]"}>
         <Suspense fallback={<PageFallback />}>
@@ -29,7 +30,7 @@ export function AppShell() {
         </Suspense>
       </main>
       {!hideFooter && <Footer />}
-      <div className="h-24 lg:hidden" />
+      {hideFooter && <div className="h-28 lg:hidden" />}
       <TabBar />
       <Toaster />
       <ScrollRestoration getKey={(l) => (l.key === "default" ? `boot-${BOOT}` : l.key)} />
