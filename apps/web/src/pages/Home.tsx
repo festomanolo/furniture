@@ -269,7 +269,7 @@ function Carpenters() {
   const list = data?.filter((s) => s.kind === "carpenter" && s.verification === "verified");
   return (
     <Section title={t("featured_carpenters")}>
-      <div className="scrollbar-none -mx-4 flex snap-x gap-3 overflow-x-auto scroll-px-4 px-4 pb-2 sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-5 lg:overflow-visible lg:px-0">
+      <div className="scrollbar-none -mx-4 flex snap-x gap-3 scroll-row scroll-px-4 px-4 pb-2 sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-5 lg:overflow-visible lg:[contain:none] lg:px-0">
         {isLoading && Array.from({ length: 3 }, (_, i) => <Skeleton key={i} className="h-64 w-[78%] max-w-80 shrink-0 rounded-[1.5rem] lg:w-auto lg:max-w-none" />)}
         {list?.map((s) => <MakerCard key={s.id} seller={s} />)}
       </div>
