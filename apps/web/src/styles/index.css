@@ -71,6 +71,7 @@
 /*
  * Horizontal scroll rows. contain: paint is required: without it Android WebView
  * counts the row's scrolled-out content when sizing the layout viewport, widening
+ * the page to ~1720px and pushing fixed chrome (header, tab bar) off-screen.
 }
 @utility scrollbar-none {
   scrollbar-width: none;
