@@ -1,10 +1,4 @@
-import { NavLink, useLocation } from "react-router";
-import { motion } from "motion/react";
-import { Compass, Home, PenTool, ShoppingBag, User } from "lucide-react";
-import { cn } from "@/lib/cn";
-import { useT } from "@/lib/i18n";
-import { spring } from "@/lib/motion";
-import { useCartCount } from "@/stores/cart";
+import { Dock } from "./Dock";
 
 /** Floating liquid-glass tab bar (mobile). Max 5 destinations. */
 export function TabBar() {
