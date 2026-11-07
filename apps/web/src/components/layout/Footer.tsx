@@ -165,8 +165,8 @@ export function Footer() {
           SAMANI
         </span>
       </div>
-      {/* Specular edge on the letters, drawn separately so the photo stays crisp. */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 flex items-end justify-center pb-[calc(var(--fpb)+1.15rem)] select-none">
+      {/* Specular sheen on the letters, a separate layer so the photo stays crisp. */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-[var(--fpb)] flex justify-center pb-[1.15rem] select-none">
         <span className="bg-[linear-gradient(180deg,rgb(255_255_255/0.5),rgb(255_255_255/0)_38%,rgb(255_255_255/0)_70%,rgb(255_255_255/0.22))] bg-clip-text text-[min(21cqw,17.5rem)] leading-[0.74] font-semibold tracking-[-0.055em] text-transparent [-webkit-background-clip:text] [filter:drop-shadow(0_18px_28px_rgb(16_45_32/0.28))]">
           SAMANI
         </span>
