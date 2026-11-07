@@ -160,9 +160,10 @@ export function Footer() {
       <div ref={markRef} aria-hidden className="pointer-events-none absolute inset-x-0 bottom-[var(--fpb)] flex justify-center pb-[1.15rem] select-none">
         <span
           className="block bg-no-repeat text-[min(21cqw,17.5rem)] leading-[0.74] font-semibold tracking-[-0.055em] text-transparent [-webkit-text-stroke:1.5px_rgb(255_255_255/0.55)]"
-        style={{ ...photoStyle, WebkitBackgroundClip: "text" }}
-      >
-        <span className="text-[min(21cqw,17.5rem)] leading-[0.74] font-semibold tracking-[-0.055em] [-webkit-text-stroke:1.5px_rgb(255_255_255/0.55)]">SAMANI</span>
+          style={{ backgroundImage: `url(${photo.src.replace("-960", "-1920")})`, backgroundSize: align.size, backgroundPosition: align.pos, WebkitBackgroundClip: "text", backgroundClip: "text" }}
+        >
+          SAMANI
+        </span>
       </div>
       {/* Specular edge on the letters, drawn separately so the photo stays crisp. */}
       <div aria-hidden className="pointer-events-none absolute inset-0 flex items-end justify-center pb-[calc(var(--fpb)+1.15rem)] select-none">
