@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MotionConfig } from "motion/react";
 import { Capacitor } from "@capacitor/core";
 import { router } from "./router";
+import { enableRefraction } from "./components/layout/LiquidFilters";
 import { usePrefs } from "./stores/prefs";
 import "./styles/index.css";
 
