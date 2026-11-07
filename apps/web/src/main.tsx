@@ -22,6 +22,7 @@ const queryClient = new QueryClient({
 document.documentElement.lang = usePrefs.getState().locale;
 
 if (Capacitor.isNativePlatform()) {
+  // A service worker inside the native shell would serve stale bundles after app updates.
   void import("@capacitor/status-bar").then(({ StatusBar, Style }) => StatusBar.setStyle({ style: Style.Light }).catch(() => undefined));
   void import("@capacitor/splash-screen").then(({ SplashScreen }) => SplashScreen.hide().catch(() => undefined));
 }
