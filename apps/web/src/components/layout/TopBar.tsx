@@ -16,22 +16,16 @@ export function TopBar() {
   const district = usePrefs((s) => s.district);
   const [locOpen, setLocOpen] = useState(false);
   const [notiOpen, setNotiOpen] = useState(false);
-  const [q, setQ] = useState("");
-  const onHero = overHero && !scrolled;
+  const accountActive = /^\/(account|orders|messages|help)/.test(pathname);
 
   return (
     <>
-      <header className="pt-safe fixed inset-x-0 top-0 z-50">
-        <div className="mx-auto max-w-7xl px-3 pt-2 sm:px-6 lg:px-8">
-          <motion.div
-            animate={{ y: 0 }}
-            className={cn(
-              "flex h-14 items-center gap-2 rounded-full pr-1.5 pl-4 transition-[background,box-shadow,border-color,color] duration-300 lg:h-16 lg:pl-5",
-              onHero ? "glass-dark" : "glass glass-sheen",
-            )}
-          >
-            <Link to="/" aria-label="SAMANI" className="shrink-0">
-              <Logo inverted={onHero} />
+      <header className="pt-safe pointer-events-none fixed inset-x-0 top-0 z-50">
+        <div className="mx-auto flex max-w-7xl items-center gap-3 px-3 pt-2.5 sm:px-6 lg:px-8 lg:pt-4">
+          {/* Brand + delivery location */}
+          <div className="liquid pointer-events-auto flex h-14 min-w-0 items-center gap-1 rounded-full pr-1.5 pl-4 max-lg:flex-1 lg:h-[3.6rem]">
+            <Link to="/" aria-label="SAMANI" className="shrink-0 rounded-full">
+              <Logo />
             </Link>
 
             <button
