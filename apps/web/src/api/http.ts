@@ -48,5 +48,6 @@ export function createHttpClient(baseUrl: string): ApiClient {
     submitCustomRequest: (input, editingId) =>
       editingId ? req(`/custom-requests/${editingId}`, { method: "PUT", body: JSON.stringify(input) }) : req("/custom-requests", post(input)),
     withdrawCustomRequest: (id) => req(`/custom-requests/${id}/withdraw`, post({})),
+    subscribeNewsletter: (email, locale) => req("/newsletter/subscriptions", post({ email, locale })),
   };
 }
