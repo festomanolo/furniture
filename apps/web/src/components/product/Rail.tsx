@@ -7,7 +7,7 @@ import { ProductCard } from "./ProductCard";
 export function ProductRail({ products, loading }: { products?: Product[]; loading?: boolean }) {
   const { data: sellers } = useSellers();
   return (
-    <div className="scrollbar-none -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-4 px-4 pb-2 sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-5 lg:overflow-visible lg:px-0">
+    <div className="scrollbar-none -mx-4 flex snap-x snap-mandatory gap-3 scroll-row scroll-px-4 px-4 pb-2 sm:-mx-6 sm:scroll-px-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-5 lg:overflow-visible lg:[contain:none] lg:px-0">
       {loading && !products
         ? Array.from({ length: 4 }, (_, i) => (
             <div key={i} className="w-[44%] max-w-56 shrink-0 lg:w-auto lg:max-w-none">
