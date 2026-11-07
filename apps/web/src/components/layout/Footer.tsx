@@ -279,3 +279,8 @@ function useCoverAlign(outer: RefObject<HTMLElement | null>, inner: RefObject<HT
     let natural: { w: number; h: number } | null = null;
     const compute = () => {
       if (!natural) return;
+      const fw = o.offsetWidth;
+      const fh = o.offsetHeight;
+      const scale = Math.max(fw / natural.w, fh / natural.h);
+      const w = natural.w * scale;
+      const h = natural.h * scale;
