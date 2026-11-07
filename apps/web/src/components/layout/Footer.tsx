@@ -298,3 +298,8 @@ function useCoverAlign(outer: RefObject<HTMLElement | null>, inner: RefObject<HT
     img.src = src;
     const ro = new ResizeObserver(compute);
     ro.observe(o);
+    ro.observe(i);
+    return () => ro.disconnect();
+  }, [outer, inner, src, posX, posY]);
+  return align;
+}
