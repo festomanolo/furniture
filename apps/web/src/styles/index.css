@@ -76,6 +76,8 @@
 @utility scroll-row {
   overflow-x: auto;
   overscroll-behavior-x: contain;
+  contain: paint;
+  scrollbar-width: none;
 }
 @utility scrollbar-none {
   scrollbar-width: none;
