@@ -88,7 +88,7 @@ export default function Explore({ mode }: { mode: "explore" | "category" | "sear
         )}
 
         {mode === "explore" && (
-          <div className="scrollbar-none -mx-4 mb-4 flex gap-2 overflow-x-auto px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-wrap lg:px-0">
+          <div className="scrollbar-none -mx-4 mb-4 flex gap-2 scroll-row px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-wrap lg:px-0">
             <Chip selected={!params.get("category")} onClick={() => update(setParams, params, { category: null })}>
               {t("any")}
             </Chip>
