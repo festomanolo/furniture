@@ -26,6 +26,7 @@ if (Capacitor.isNativePlatform()) {
   void navigator.serviceWorker?.getRegistrations().then((rs) => rs.forEach((r) => r.unregister()));
   void import("@capacitor/status-bar").then(({ StatusBar, Style }) => StatusBar.setStyle({ style: Style.Light }).catch(() => undefined));
   void import("@capacitor/splash-screen").then(({ SplashScreen }) => SplashScreen.hide().catch(() => undefined));
+} else if (import.meta.env.PROD) {
 }
 
 createRoot(document.getElementById("root")!).render(
