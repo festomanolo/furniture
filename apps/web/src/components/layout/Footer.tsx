@@ -265,3 +265,7 @@ function LanguagePill() {
     </div>
   );
 }
+
+/**
+ * Computes background-size/position so an element's background lines up exactly with a
+ * `background-size: cover` photo on an ancestor (posX/posY = the ancestor's background-position).
