@@ -280,7 +280,7 @@ function Carpenters() {
 function MakerCard({ seller }: { seller: SellerSummary }) {
   const { t } = useT();
   return (
-    <Link to={`/seller/${seller.slug}`} className="group w-[78vw] max-w-80 shrink-0 snap-start overflow-hidden rounded-[1.5rem] bg-paper shadow-soft transition-shadow hover:shadow-lift lg:w-auto lg:max-w-none">
+    <Link to={`/seller/${seller.slug}`} className="group w-[78%] max-w-80 shrink-0 snap-start overflow-hidden rounded-[1.5rem] bg-paper shadow-soft transition-shadow hover:shadow-lift lg:w-auto lg:max-w-none">
       <Img base={seller.cover} alt="" sizes="(min-width:1024px) 30vw, 78vw" wrapperClassName="h-36" className="group-hover:scale-[1.03]" />
       <div className="relative px-4 pt-8 pb-4">
         <Monogram name={seller.name} className="absolute -top-6 left-4 size-12" />
