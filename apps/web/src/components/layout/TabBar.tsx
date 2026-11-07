@@ -1,17 +1,7 @@
 import { Dock } from "./Dock";
 
-/** Floating liquid-glass tab bar (mobile). Max 5 destinations. */
+/** Mobile navigation: the liquid-glass dock floating above the home indicator. */
 export function TabBar() {
-  const { t } = useT();
-  const count = useCartCount();
-  const { pathname } = useLocation();
-  const tabs = [
-    { to: "/", label: t("nav_home"), icon: Home, match: (p: string) => p === "/" },
-    { to: "/explore", label: t("nav_explore"), icon: Compass, match: (p: string) => /^\/(explore|category|search|product|seller\/)/.test(p) },
-    { to: "/custom-studio", label: t("nav_studio"), icon: PenTool, match: (p: string) => p.startsWith("/custom-studio") || p.startsWith("/quotations") },
-    { to: "/cart", label: t("nav_cart"), icon: ShoppingBag, match: (p: string) => p.startsWith("/cart") || p.startsWith("/checkout") },
-    { to: "/account", label: t("nav_account"), icon: User, match: (p: string) => /^\/(account|orders|saved|messages)/.test(p) },
-  ];
   return (
     <nav aria-label="Tabs" className="pb-safe fixed inset-x-0 bottom-0 z-50 px-3 lg:hidden">
       <div className="glass glass-sheen mx-auto mb-2 flex h-16 max-w-md items-center justify-between rounded-full px-1.5">
