@@ -293,3 +293,8 @@ function useCoverAlign(outer: RefObject<HTMLElement | null>, inner: RefObject<HT
     const img = new Image();
     img.onload = () => {
       natural = { w: img.naturalWidth, h: img.naturalHeight };
+      compute();
+    };
+    img.src = src;
+    const ro = new ResizeObserver(compute);
+    ro.observe(o);
