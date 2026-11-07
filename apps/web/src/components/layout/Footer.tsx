@@ -157,9 +157,9 @@ export function Footer() {
         The layer only spans the wordmark strip (large clip-text layers fail on Android WebView),
         so its background is aligned to the footer photo by useCoverAlign.
       */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 flex items-end justify-center bg-cover bg-[center_62%] bg-clip-text pb-[calc(var(--fpb)+1.15rem)] text-transparent select-none"
+      <div ref={markRef} aria-hidden className="pointer-events-none absolute inset-x-0 bottom-[var(--fpb)] flex justify-center pb-[1.15rem] select-none">
+        <span
+          className="block bg-no-repeat text-[min(21cqw,17.5rem)] leading-[0.74] font-semibold tracking-[-0.055em] text-transparent [-webkit-text-stroke:1.5px_rgb(255_255_255/0.55)]"
         style={{ ...photoStyle, WebkitBackgroundClip: "text" }}
       >
         <span className="text-[min(21cqw,17.5rem)] leading-[0.74] font-semibold tracking-[-0.055em] [-webkit-text-stroke:1.5px_rgb(255_255_255/0.55)]">SAMANI</span>
