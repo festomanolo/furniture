@@ -119,6 +119,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 Liquid glass UI (dock + footer):
 - `Dock.tsx`: frosted pill with a sliding liquid lens (shared layout animation) that rests on the
+  active route, follows the mouse on hover and expands the item's label; separate cart orb with an
 Lessons from the first device run:
 - Horizontal scroll rows must use the `scroll-row` utility (`contain: paint`). Without it Android
   WebView sized the layout viewport to ~1720px and pushed the fixed header and tab bar off-screen.
