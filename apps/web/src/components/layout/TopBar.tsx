@@ -35,66 +35,24 @@ export function TopBar() {
               </span>
               <ChevronDown className="size-3.5 shrink-0 text-muted" />
             </button>
+            <IconButton label={t("notifications")} className="ml-auto hover:bg-white/40 lg:hidden" onClick={() => setNotiOpen(true)}>
+              <Bell className="size-5" />
+            </IconButton>
+          </div>
 
-            <nav className="ml-2 hidden items-center gap-1 lg:flex" aria-label="Primary">
-              {[
-                ["/explore", t("nav_explore")],
-                ["/custom-studio", t("nav_studio")],
-              ].map(([to, label]) => (
-                <NavLink
-                  key={to}
-                  to={to!}
-                  className={({ isActive }) =>
-                    cn("h-10 rounded-full px-4 text-sm leading-10 font-medium", isActive ? (onHero ? "bg-white/15" : "bg-forest text-white") : onHero ? "hover:bg-white/10" : "hover:bg-sage/60")
-                  }
-                >
-                  {label}
-                </NavLink>
-              ))}
-            </nav>
+          {/* Desktop: dock in the centre of the bar */}
+          <div className="pointer-events-auto absolute left-1/2 hidden -translate-x-1/2 lg:block">
+            <Dock placement="top" onNotifications={() => setNotiOpen(true)} />
+          </div>
 
-            <form
-              role="search"
-              className="ml-auto hidden max-w-xs flex-1 md:block"
-              onSubmit={(e) => {
-                e.preventDefault();
-                nav(`/search?q=${encodeURIComponent(q.trim())}`);
-              }}
-            >
-              <label className={cn("flex h-10 items-center gap-2 rounded-full px-3.5", onHero ? "bg-white/12 placeholder:text-white/70" : "bg-paper/70 ring-1 ring-line")}>
-                <Search className="size-4 shrink-0 opacity-70" />
-                <span className="sr-only">Search</span>
-                <input
-                  value={q}
-                  onChange={(e) => setQ(e.target.value)}
-                  placeholder={t("search_placeholder")}
-                  className={cn("w-full bg-transparent text-sm outline-none", onHero ? "placeholder:text-white/70" : "placeholder:text-muted")}
-                />
-              </label>
-            </form>
-
-            <div className={cn("ml-auto flex items-center md:ml-1", onHero && "[&_button]:text-white [&_a]:text-white")}>
-              <IconButton label="Search" className="md:hidden" onClick={() => nav("/search")}>
-                <Search className="size-5" />
-              </IconButton>
-              <IconButton label={t("deliver_to")} className="sm:hidden" onClick={() => setLocOpen(true)}>
-                <MapPin className="size-5" />
-              </IconButton>
-              <IconButton label={t("notifications")} onClick={() => setNotiOpen(true)}>
-                <Bell className="size-5" />
-              </IconButton>
-              <Link to="/saved" aria-label={t("saved_title")} className="hidden size-11 items-center justify-center rounded-full hover:bg-sage/60 lg:inline-flex">
-                <Heart className="size-5" />
-              </Link>
-              <Link to="/cart" aria-label={t("nav_cart")} className="relative hidden size-11 items-center justify-center rounded-full hover:bg-sage/60 lg:inline-flex">
-                <ShoppingBag className="size-5" />
-                {count > 0 && <span className="tabular absolute top-1 right-0.5 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-forest-deep">{count}</span>}
-              </Link>
-              <Link to="/account" aria-label={t("nav_account")} className="hidden size-11 items-center justify-center rounded-full hover:bg-sage/60 lg:inline-flex">
-                <User className="size-5" />
-              </Link>
-            </div>
-          </motion.div>
+          <Link
+            to="/account"
+            aria-label={t("nav_account")}
+            aria-current={accountActive ? "page" : undefined}
+            className={cn("liquid pointer-events-auto ml-auto hidden size-[3.6rem] items-center justify-center rounded-full lg:flex", accountActive && "ring-2 ring-forest/70")}
+          >
+            <User className={cn("size-[21px]", accountActive ? "text-forest" : "text-ink/80")} />
+          </Link>
         </div>
       </header>
       <LocationSheet open={locOpen} onClose={() => setLocOpen(false)} />
