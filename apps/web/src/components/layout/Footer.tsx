@@ -284,3 +284,7 @@ function useCoverAlign(outer: RefObject<HTMLElement | null>, inner: RefObject<HT
       const scale = Math.max(fw / natural.w, fh / natural.h);
       const w = natural.w * scale;
       const h = natural.h * scale;
+      const bx = (fw - w) * posX;
+      const by = (fh - h) * posY;
+      const or = o.getBoundingClientRect();
+      const ir = i.getBoundingClientRect();
