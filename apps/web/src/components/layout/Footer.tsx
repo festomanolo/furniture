@@ -1,5 +1,15 @@
+import { useState, type FormEvent, type PointerEvent } from "react";
 import { Link } from "react-router";
-import { useT } from "@/lib/i18n";
+import { LayoutGroup, motion, useMotionTemplate, useMotionValue, useReducedMotion } from "motion/react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { newsletterSchema } from "@samani/shared";
+import { api } from "@/api/client";
+import { cn } from "@/lib/cn";
+import { env } from "@/lib/env";
+import { errorText, useT, type TKey } from "@/lib/i18n";
+import { brandImage } from "@/lib/media";
+import { usePrefs } from "@/stores/prefs";
+import { toast } from "@/stores/toast";
 import { Logo } from "./Logo";
 
 export function Footer() {
