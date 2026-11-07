@@ -152,8 +152,10 @@ export function Footer() {
       </div>
 
       {/*
-        See-through wordmark: the same photo, unblurred and aligned with the room behind,
-        clipped to the letters. Reads as clear glass cut into the frosted panel.
+        See-through wordmark: the same photo, unblurred and pixel-aligned with the room
+        behind, clipped to the letters. Reads as clear glass cut into the frosted panel.
+        The layer only spans the wordmark strip (large clip-text layers fail on Android WebView),
+        so its background is aligned to the footer photo by useCoverAlign.
       */}
       <div
         aria-hidden
