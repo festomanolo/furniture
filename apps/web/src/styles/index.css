@@ -78,6 +78,7 @@
   overscroll-behavior-x: contain;
   contain: paint;
   scrollbar-width: none;
+  &::-webkit-scrollbar {
 }
 @utility scrollbar-none {
   scrollbar-width: none;
