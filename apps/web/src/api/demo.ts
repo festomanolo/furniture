@@ -212,5 +212,13 @@ export function createDemoClient(): ApiClient {
       write("samani.demo.requests", all.map((x) => (x.id === id ? next : x)));
       return next;
     },
+    async subscribeNewsletter(email) {
+      await wait(500);
+      const all = read<string[]>("samani.demo.newsletter", []);
+      const key = email.trim().toLowerCase();
+      if (all.includes(key)) return { alreadySubscribed: true };
+      write("samani.demo.newsletter", [...all, key]);
+      return { alreadySubscribed: false };
+    },
   };
 }
