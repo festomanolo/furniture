@@ -74,7 +74,7 @@ export default function Account() {
           </li>
         </ul>
 
-        <button onClick={soon} className="flex items-center gap-4 rounded-[1.5rem] bg-sage p-5 text-left">
+        <Link to="/help/selling" className="flex items-center gap-4 rounded-[1.5rem] bg-sage p-5 text-left">
           <span className="flex size-12 items-center justify-center rounded-full bg-forest text-gold">
             <Store className="size-5" />
           </span>
@@ -83,7 +83,7 @@ export default function Account() {
             <span className="block text-sm text-muted">{t("become_seller_sub")}</span>
           </span>
           <ChevronRight className="size-5 text-muted" />
-        </button>
+        </Link>
 
         {isDemoMode && <p className="text-center text-xs text-muted">{t("demo_banner")}</p>}
       </div>
