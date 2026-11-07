@@ -54,3 +54,7 @@ export function toCentimetres(value: number, unit: "cm" | "mm" | "m"): number {
   const cm = unit === "mm" ? value / 10 : unit === "m" ? value * 100 : value;
   return Math.round(cm * 10) / 10;
 }
+
+export const newsletterSchema = z.object({
+  email: z.string().trim().toLowerCase().email("email_invalid").max(254),
+});
