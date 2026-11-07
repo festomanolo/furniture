@@ -269,3 +269,8 @@ function LanguagePill() {
 /**
  * Computes background-size/position so an element's background lines up exactly with a
  * `background-size: cover` photo on an ancestor (posX/posY = the ancestor's background-position).
+ */
+function useCoverAlign(outer: RefObject<HTMLElement | null>, inner: RefObject<HTMLElement | null>, src: string, posX: number, posY: number) {
+  const [align, setAlign] = useState({ size: "cover", pos: "center" });
+  useLayoutEffect(() => {
+    const o = outer.current;
