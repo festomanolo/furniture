@@ -125,6 +125,7 @@ Liquid glass UI (dock + footer):
   link columns with a hover lens, pointer-following sheen, language pill and a see-through wordmark
   whose background is aligned to the photo by `useCoverAlign`.
 - `/help/:topic` pages back every footer link (privacy and terms are marked draft pending legal review).
+- Real refraction uses SVG displacement in `backdrop-filter` (`LiquidFilters.tsx`), enabled only on
 Lessons from the first device run:
 - Horizontal scroll rows must use the `scroll-row` utility (`contain: paint`). Without it Android
   WebView sized the layout viewport to ~1720px and pushed the fixed header and tab bar off-screen.
