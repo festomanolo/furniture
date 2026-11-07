@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/Toaster";
 import { Footer } from "./Footer";
 import { TabBar } from "./TabBar";
 import { TopBar } from "./TopBar";
+import { LiquidFilters } from "./LiquidFilters";
 
 /** Fresh document loads all share the key "default"; give each boot its own so we never restore a stale position. */
 const BOOT = Date.now();
