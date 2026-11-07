@@ -32,6 +32,7 @@ export interface ApiClient {
   customRequests(): Promise<CustomRequest[]>;
   submitCustomRequest(input: CustomRequestInput, editingId?: string | null): Promise<CustomRequest>;
   withdrawCustomRequest(id: string): Promise<CustomRequest>;
+  subscribeNewsletter(email: string, locale: "sw" | "en"): Promise<{ alreadySubscribed: boolean }>;
 }
 
 export class ApiError extends Error {
