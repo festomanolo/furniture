@@ -224,7 +224,6 @@ html.refract .liquid-lens {
   .glass-dark {
     background: rgb(16 45 32 / 0.96);
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
 }
 
