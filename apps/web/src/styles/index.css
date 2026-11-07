@@ -220,7 +220,6 @@ html.refract .liquid-lens {
   .glass {
     background: rgb(255 255 255 / 0.97);
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
   .glass-dark {
     background: rgb(16 45 32 / 0.96);
