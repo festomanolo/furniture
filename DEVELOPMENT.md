@@ -126,6 +126,7 @@ Liquid glass UI (dock + footer):
   whose background is aligned to the photo by `useCoverAlign`.
 - `/help/:topic` pages back every footer link (privacy and terms are marked draft pending legal review).
 - Real refraction uses SVG displacement in `backdrop-filter` (`LiquidFilters.tsx`), enabled only on
+  Chromium (`html.refract`); other engines get the frosted blur. Reduced transparency falls back to opaque.
 Lessons from the first device run:
 - Horizontal scroll rows must use the `scroll-row` utility (`contain: paint`). Without it Android
   WebView sized the layout viewport to ~1720px and pushed the fixed header and tab bar off-screen.
