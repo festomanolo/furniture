@@ -117,6 +117,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 `android/local.properties` (sdk.dir) is machine-specific and git-ignored by the Android project.
 
+Liquid glass UI (dock + footer):
 Lessons from the first device run:
 - Horizontal scroll rows must use the `scroll-row` utility (`contain: paint`). Without it Android
   WebView sized the layout viewport to ~1720px and pushed the fixed header and tab bar off-screen.
