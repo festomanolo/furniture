@@ -10,6 +10,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
+      // Registered manually in main.tsx: web only. Native (Capacitor) ships assets in the APK/IPA.
       includeAssets: ["favicon.svg"],
       manifest: {
         name: "SAMANI",
