@@ -128,6 +128,7 @@ Liquid glass UI (dock + footer):
 - Real refraction uses SVG displacement in `backdrop-filter` (`LiquidFilters.tsx`), enabled only on
   Chromium (`html.refract`); other engines get the frosted blur. Reduced transparency falls back to opaque.
 - Write only the standard `backdrop-filter` in CSS. Lightning CSS collapses a hand-written
+  `-webkit-backdrop-filter` pair into the prefixed form alone, which Chrome 156 ignores.
 Lessons from the first device run:
 - Horizontal scroll rows must use the `scroll-row` utility (`contain: paint`). Without it Android
   WebView sized the layout viewport to ~1720px and pushed the fixed header and tab bar off-screen.
