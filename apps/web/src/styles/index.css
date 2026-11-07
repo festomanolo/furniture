@@ -74,6 +74,7 @@
  * the page to ~1720px and pushing fixed chrome (header, tab bar) off-screen.
  */
 @utility scroll-row {
+  overflow-x: auto;
 }
 @utility scrollbar-none {
   scrollbar-width: none;
