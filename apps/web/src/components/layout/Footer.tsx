@@ -72,6 +72,10 @@ export function Footer() {
     my.set(e.clientY - r.top);
   };
 
+  const footerRef = useRef<HTMLElement>(null);
+  const markRef = useRef<HTMLDivElement>(null);
+  const align = useCoverAlign(footerRef, markRef, photo.src, 0.5, 0.62);
+
   const photoStyle = { backgroundImage: `image-set(url(${photo.src}) 1x, url(${photo.src.replace("-960", "-1920")}) 2x)` };
 
   return (
