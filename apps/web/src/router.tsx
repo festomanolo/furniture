@@ -37,6 +37,7 @@ export const router = createBrowserRouter([
       { path: "/saved", element: <Saved /> },
       { path: "/messages", element: <Messages /> },
       { path: "/account", element: <Account /> },
+      { path: "/help/:topic", element: <Help /> },
       { path: "*", element: <NotFound /> },
     ],
   },
