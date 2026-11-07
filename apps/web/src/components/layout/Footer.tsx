@@ -79,7 +79,7 @@ export function Footer() {
   const photoStyle = { backgroundImage: `image-set(url(${photo.src}) 1x, url(${photo.src.replace("-960", "-1920")}) 2x)` };
 
   return (
-    <footer className="relative isolate mt-24 overflow-hidden [container-type:inline-size] [--fpb:calc(env(safe-area-inset-bottom)+6.75rem)] lg:[--fpb:3rem]">
+    <footer ref={footerRef} className="relative isolate mt-24 overflow-hidden [container-type:inline-size] [--fpb:calc(env(safe-area-inset-bottom)+6.75rem)] lg:[--fpb:3rem]">
       {/* The room behind the glass */}
       <div aria-hidden className="absolute inset-0 -z-10 bg-cover bg-[center_62%]" style={photoStyle} />
       <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(245_245_240)_0%,rgb(245_245_240/0)_14%,transparent_70%,rgb(16_45_32/0.25))]" />
