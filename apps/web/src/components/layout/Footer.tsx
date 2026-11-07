@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type PointerEvent } from "react";
+import { useLayoutEffect, useRef, useState, type FormEvent, type PointerEvent, type RefObject } from "react";
 import { Link } from "react-router";
 import { LayoutGroup, motion, useMotionTemplate, useMotionValue, useReducedMotion } from "motion/react";
 import { ArrowRight, MessageCircle } from "lucide-react";
