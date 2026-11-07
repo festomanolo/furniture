@@ -5,6 +5,7 @@ import { IconButton } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { useT } from "@/lib/i18n";
 import { usePrefs } from "@/stores/prefs";
+import { Dock } from "./Dock";
 import { LocationSheet } from "./LocationSheet";
 import { Logo } from "./Logo";
 import { NotificationsSheet } from "./NotificationsSheet";
@@ -12,18 +13,7 @@ import { NotificationsSheet } from "./NotificationsSheet";
 export function TopBar() {
   const { t } = useT();
   const { pathname } = useLocation();
-  const nav = useNavigate();
   const district = usePrefs((s) => s.district);
-  const count = useCartCount();
-  const overHero = pathname === "/";
-  const { scrollY } = useScroll();
-  const [scrolled, setScrolled] = useState(() => typeof window !== "undefined" && window.scrollY > 24);
-  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 24));
-  // Scroll restoration can land mid-page without a change event; sync once after navigation.
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setScrolled(window.scrollY > 24));
-    return () => cancelAnimationFrame(id);
-  }, [pathname]);
   const [locOpen, setLocOpen] = useState(false);
   const [notiOpen, setNotiOpen] = useState(false);
   const [q, setQ] = useState("");
